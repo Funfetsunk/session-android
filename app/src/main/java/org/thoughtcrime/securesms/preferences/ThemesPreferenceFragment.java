@@ -49,7 +49,6 @@ public class ThemesPreferenceFragment extends ListSummaryPreferenceFragment {
             ledBlinkPref.setVisible(false);
             TextSecurePreferences.setNotificationRingtone(getContext(), NotificationChannels.getMessageRingtone(getContext()).toString());
             TextSecurePreferences.setNotificationVibrateEnabled(getContext(), NotificationChannels.getMessageVibrate(getContext()));
-
         } else {
             ledBlinkPref.setOnPreferenceChangeListener(new ListSummaryListener());
             initializeListSummary((ListPreference) ledBlinkPref);
@@ -87,9 +86,7 @@ public class ThemesPreferenceFragment extends ListSummaryPreferenceFragment {
                     intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
                     intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, Settings.System.DEFAULT_NOTIFICATION_URI);
                     intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, current);
-
                     startActivityForResult(intent, 1);
-
                     return true;
                 });*/
 
@@ -99,14 +96,14 @@ public class ThemesPreferenceFragment extends ListSummaryPreferenceFragment {
         initializeListSummary((ListPreference) findPreference(TextSecurePreferences.NOTIFICATION_PRIVACY_PREF));*/
 
         if (NotificationChannels.supported()) {
-            this.findPreference(TextSecurePreferences.THEMES_PREF)
-                    .setOnPreferenceClickListener(preference -> {
+            this.findPreference(TextSecurePreferences.THEMES_PREF);
+/*                    .setOnPreferenceClickListener(preference -> {
                         Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
                         intent.putExtra(Settings.EXTRA_CHANNEL_ID, NotificationChannels.getMessagesChannel(getContext()));
                         intent.putExtra(Settings.EXTRA_APP_PACKAGE, getContext().getPackageName());
                         startActivity(intent);
                         return true;
-                    });
+                    });*/
         } else {
             initializeListSummary((ListPreference) findPreference(TextSecurePreferences.THEMES_PREF));
         }
@@ -136,11 +133,11 @@ public class ThemesPreferenceFragment extends ListSummaryPreferenceFragment {
                 TextSecurePreferences.setNotificationRingtone(getContext(), uri.toString());
             }
 
-        //   initializeRingtoneSummary(findPreference(TextSecurePreferences.RINGTONE_PREF));
+            //   initializeRingtoneSummary(findPreference(TextSecurePreferences.RINGTONE_PREF));
         }
     }
 
-   private class RingtoneSummaryListener implements Preference.OnPreferenceChangeListener {
+    private class RingtoneSummaryListener implements Preference.OnPreferenceChangeListener {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             Uri value = (Uri) newValue;
@@ -164,7 +161,6 @@ public class ThemesPreferenceFragment extends ListSummaryPreferenceFragment {
    private void initializeRingtoneSummary(Preference pref) {
         RingtoneSummaryListener listener = (RingtoneSummaryListener) pref.getOnPreferenceChangeListener();
         Uri                     uri      = TextSecurePreferences.getNotificationRingtone(getContext());
-
         listener.onPreferenceChange(pref, uri);
     }
 */
