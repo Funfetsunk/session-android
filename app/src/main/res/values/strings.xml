@@ -559,6 +559,7 @@
     <string name="preferences_advanced__use_system_emoji">Use system emoji</string>
     <string name="preferences_advanced__disable_signal_built_in_emoji_support">Disable Session\'s built-in emoji support</string>
     <string name="preferences_app_protection__app_access">App Access</string>
+    <string name="preferences_app_themes">Themes</string>
     <string name="preferences_app_protection__communication">Communication</string>
     <string name="preferences_chats__chats">Chats</string>
     <string name="preferences_notifications__messages">Messages</string>
@@ -648,6 +649,9 @@
     <string name="preferences_app_protection__screen_lock">Screen lock</string>
     <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Lock Session access with Android screen lock or fingerprint</string>
     <string name="preferences_app_protection__screen_lock_inactivity_timeout">Screen lock inactivity timeout</string>
+    <string name="preferences_app_green_theme">Green</string>
+    <string name="preferences_app_purple_theme">Purple</string>
+    <string name="preferences_app_red_theme">Red</string>
     <string name="AppProtectionPreferenceFragment_none">None</string>
     <!-- Conversation activity -->
     <string name="activity_conversation_copy_public_key_button_title">Copy public key</string>
@@ -749,6 +753,7 @@
     <string name="activity_settings_display_name_missing_error">Please pick a display name</string>
     <string name="activity_settings_display_name_too_long_error">Please pick a shorter display name</string>
     <string name="activity_settings_privacy_button_title">Privacy</string>
+    <string name="activity_settings_themes_button_title">Themes</string>
     <string name="activity_settings_notifications_button_title">Notifications</string>
     <string name="activity_settings_chats_button_title">Chats</string>
     <string name="activity_settings_devices_button_title">Devices</string>
@@ -762,6 +767,8 @@
     <string name="activity_notification_settings_content_section_title">Notification Content</string>
 
     <string name="activity_privacy_settings_title">Privacy</string>
+
+    <string name="activity_themes_settings_title">Themes</string>
 
     <string name="activity_chat_settings_title">Chats</string>
 

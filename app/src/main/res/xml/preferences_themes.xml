@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_app_themes">
+
+        <org.thoughtcrime.securesms.preferences.widgets.SignalListPreference
+            android:key="pref_themes"
+            android:title="@string/preferences_app_themes"
+            android:defaultValue="1"
+            android:entries="@array/pref_themes_priority_entries"
+            android:entryValues="@array/pref_themes_priority_values" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

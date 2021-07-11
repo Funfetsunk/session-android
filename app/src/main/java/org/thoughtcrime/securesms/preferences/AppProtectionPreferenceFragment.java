@@ -63,8 +63,8 @@ public class AppProtectionPreferenceFragment extends CorrectedPreferenceFragment
     long seconds        = TimeUnit.SECONDS.toSeconds(timeoutSeconds) - (TimeUnit.SECONDS.toMinutes(timeoutSeconds) * 60);
 
     findPreference(TextSecurePreferences.SCREEN_LOCK_TIMEOUT)
-        .setSummary(timeoutSeconds <= 0 ? getString(R.string.AppProtectionPreferenceFragment_none) :
-                                          String.format("%02d:%02d:%02d", hours, minutes, seconds));
+            .setSummary(timeoutSeconds <= 0 ? getString(R.string.AppProtectionPreferenceFragment_none) :
+                    String.format("%02d:%02d:%02d", hours, minutes, seconds));
   }
 
   private void initializeVisibility() {

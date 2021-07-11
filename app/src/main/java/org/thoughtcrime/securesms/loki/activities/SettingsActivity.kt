@@ -84,6 +84,7 @@ class SettingsActivity : PassphraseRequiredActionBarActivity() {
         copyButton.setOnClickListener { copyPublicKey() }
         shareButton.setOnClickListener { sharePublicKey() }
         privacyButton.setOnClickListener { showPrivacySettings() }
+        themesButton.setOnClickListener { showThemesSettings() }
         notificationsButton.setOnClickListener { showNotificationSettings() }
         chatsButton.setOnClickListener { showChatSettings() }
         sendInvitationButton.setOnClickListener { sendInvitation() }
@@ -264,6 +265,11 @@ class SettingsActivity : PassphraseRequiredActionBarActivity() {
 
     private fun showPrivacySettings() {
         val intent = Intent(this, PrivacySettingsActivity::class.java)
+        push(intent)
+    }
+
+    private fun showThemesSettings() {
+        val intent = Intent(this, ThemesSettingsActivity::class.java)
         push(intent)
     }
 

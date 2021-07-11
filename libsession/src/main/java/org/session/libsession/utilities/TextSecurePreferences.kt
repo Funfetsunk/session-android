@@ -56,6 +56,8 @@ object TextSecurePreferences {
     const val NOTIFICATION_PRIVACY_PREF = "pref_notification_privacy"
     const val NOTIFICATION_PRIORITY_PREF = "pref_notification_priority"
 
+    const val THEMES_PREF = "pref_themes"
+
     const val MEDIA_DOWNLOAD_MOBILE_PREF = "pref_media_download_mobile"
     const val MEDIA_DOWNLOAD_WIFI_PREF = "pref_media_download_wifi"
     const val MEDIA_DOWNLOAD_ROAMING_PREF = "pref_media_download_roaming"
@@ -81,6 +83,10 @@ object TextSecurePreferences {
     private const val BACKUP_TIME = "pref_backup_next_time"
     const val BACKUP_NOW = "pref_backup_create"
     private const val BACKUP_SAVE_DIR = "pref_save_dir"
+
+    const val THEME_DEFAULT = "Base.Theme.Session"
+    const val THEME_PURPLE = "Base.Theme.Session.Purple"
+    const val THEME_RED = "Base.Theme.Session.Red"
 
     const val SCREEN_LOCK = "pref_android_screen_lock"
     const val SCREEN_LOCK_TIMEOUT = "pref_android_screen_lock_timeout"

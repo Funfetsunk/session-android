@@ -31,8 +31,14 @@
         <item name="android:background">@drawable/default_bottom_sheet_background</item>
     </style>
 
+    <!--
     <style name="Widget.Session.AlertDialog.NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/accent</item>
+    </style>
+-->
+
+    <style name="Widget.Session.AlertDialog.NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/purple</item>
     </style>
 
     <style name="Widget.Session.AlertDialog.PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">

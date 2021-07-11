@@ -36,11 +36,11 @@ public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragme
     String fcmKey = "pref_key_use_fcm";
     ((SwitchPreferenceCompat)findPreference(fcmKey)).setChecked(TextSecurePreferences.isUsingFCM(getContext()));
     this.findPreference(fcmKey)
-      .setOnPreferenceChangeListener((preference, newValue) -> {
-        TextSecurePreferences.setIsUsingFCM(getContext(), (boolean) newValue);
-        ApplicationContext.getInstance(getContext()).registerForFCMIfNeeded(true);
-        return true;
-      });
+            .setOnPreferenceChangeListener((preference, newValue) -> {
+              TextSecurePreferences.setIsUsingFCM(getContext(), (boolean) newValue);
+              ApplicationContext.getInstance(getContext()).registerForFCMIfNeeded(true);
+              return true;
+            });
 
     Preference ledBlinkPref = this.findPreference(TextSecurePreferences.LED_BLINK_PREF);
 
@@ -55,36 +55,36 @@ public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragme
     }
 
     this.findPreference(TextSecurePreferences.LED_COLOR_PREF)
-        .setOnPreferenceChangeListener(new LedColorChangeListener());
+            .setOnPreferenceChangeListener(new LedColorChangeListener());
     this.findPreference(TextSecurePreferences.RINGTONE_PREF)
-        .setOnPreferenceChangeListener(new RingtoneSummaryListener());
+            .setOnPreferenceChangeListener(new RingtoneSummaryListener());
     this.findPreference(TextSecurePreferences.REPEAT_ALERTS_PREF)
-        .setOnPreferenceChangeListener(new ListSummaryListener());
+            .setOnPreferenceChangeListener(new ListSummaryListener());
     this.findPreference(TextSecurePreferences.NOTIFICATION_PRIVACY_PREF)
-        .setOnPreferenceChangeListener(new NotificationPrivacyListener());
+            .setOnPreferenceChangeListener(new NotificationPrivacyListener());
     this.findPreference(TextSecurePreferences.NOTIFICATION_PRIORITY_PREF)
-        .setOnPreferenceChangeListener(new ListSummaryListener());
+            .setOnPreferenceChangeListener(new ListSummaryListener());
     this.findPreference(TextSecurePreferences.VIBRATE_PREF)
-        .setOnPreferenceChangeListener((preference, newValue) -> {
-          NotificationChannels.updateMessageVibrate(getContext(), (boolean) newValue);
-          return true;
-        });
+            .setOnPreferenceChangeListener((preference, newValue) -> {
+              NotificationChannels.updateMessageVibrate(getContext(), (boolean) newValue);
+              return true;
+            });
 
     this.findPreference(TextSecurePreferences.RINGTONE_PREF)
-        .setOnPreferenceClickListener(preference -> {
-          Uri current = TextSecurePreferences.getNotificationRingtone(getContext());
+            .setOnPreferenceClickListener(preference -> {
+              Uri current = TextSecurePreferences.getNotificationRingtone(getContext());
 
-          Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-          intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true);
-          intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, true);
-          intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
-          intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, Settings.System.DEFAULT_NOTIFICATION_URI);
-          intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, current);
+              Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+              intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true);
+              intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, true);
+              intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
+              intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, Settings.System.DEFAULT_NOTIFICATION_URI);
+              intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, current);
 
-          startActivityForResult(intent, 1);
+              startActivityForResult(intent, 1);
 
-          return true;
-        });
+              return true;
+            });
 
     initializeListSummary((ListPreference) findPreference(TextSecurePreferences.LED_COLOR_PREF));
     initializeListSummary((ListPreference) findPreference(TextSecurePreferences.REPEAT_ALERTS_PREF));
@@ -92,13 +92,13 @@ public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragme
 
     if (NotificationChannels.supported()) {
       this.findPreference(TextSecurePreferences.NOTIFICATION_PRIORITY_PREF)
-          .setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
-            intent.putExtra(Settings.EXTRA_CHANNEL_ID, NotificationChannels.getMessagesChannel(getContext()));
-            intent.putExtra(Settings.EXTRA_APP_PACKAGE, getContext().getPackageName());
-            startActivity(intent);
-            return true;
-          });
+              .setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, NotificationChannels.getMessagesChannel(getContext()));
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, getContext().getPackageName());
+                startActivity(intent);
+                return true;
+              });
     } else {
       initializeListSummary((ListPreference) findPreference(TextSecurePreferences.NOTIFICATION_PRIORITY_PREF));
     }

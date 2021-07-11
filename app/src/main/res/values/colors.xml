@@ -71,6 +71,7 @@
 
     <color name="transparent_white_30">#30ffffff</color>
     <color name="transparent_white_40">#40ffffff</color>
+    <color name="transparent_white_90">#90ffffff</color>
     <color name="transparent_white_aa">#aaffffff</color>
 
     <color name="action_mode_status_bar">@color/gray65</color>
